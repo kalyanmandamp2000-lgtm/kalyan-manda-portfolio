@@ -1,0 +1,86 @@
+{
+  "visitors": [
+    "b2ea0464-c697-41c0-ae9f-4eccf9551679"
+  ],
+  "events": {
+    "page_view": 7,
+    "section_view": 6,
+    "resume_download": 0,
+    "email_click": 0,
+    "linkedin_click": 0,
+    "github_click": 1,
+    "project_click": 0
+  },
+  "history": [
+    {
+      "event": "section_view",
+      "section": "experience",
+      "timestamp": "2026-09-27T09:02:00.088Z"
+    },
+    {
+      "event": "section_view",
+      "section": "skills",
+      "timestamp": "2026-09-27T09:02:00.599Z"
+    },
+    {
+      "event": "section_view",
+      "section": "projects",
+      "timestamp": "2026-09-27T09:02:02.783Z"
+    },
+    {
+      "event": "section_view",
+      "section": "education",
+      "timestamp": "2026-09-27T09:02:06.531Z"
+    },
+    {
+      "event": "section_view",
+      "section": "certificates",
+      "timestamp": "2026-09-27T09:02:08.169Z"
+    },
+    {
+      "event": "section_view",
+      "section": "contact",
+      "timestamp": "2026-09-27T09:02:11.206Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:02:17.065Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:03:25.861Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:10:28.035Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:15:36.163Z"
+    },
+    {
+      "event": "github_click",
+      "source": "contact",
+      "timestamp": "2026-09-27T09:15:42.339Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:45:00.603Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:45:29.053Z"
+    },
+    {
+      "event": "page_view",
+      "source": "hero",
+      "timestamp": "2026-09-27T09:45:39.697Z"
+    }
+  ]
+}
