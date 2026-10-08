@@ -2,14 +2,14 @@ import type { ResumeData } from "@/types/resume";
 
 export const resume: ResumeData = {
   personal: {
-    name: "Kalyan Manda",
+    name: "KALYAN MANDA",
     title: "Sitecore Developer & Digital Experience Engineer",
     summary:
       "I’m a Sitecore Certified AI CMS Developer focused on building scalable digital experiences that are reliable, flexible, and easy for teams to maintain. My work spans Sitecore XP, XM, XM Cloud, SXA, Sitecore MVC, .NET, and ASP.NET, with a strong emphasis on enterprise CMS solutions and performance-driven user experiences.",
     email: "kalyanmandamp2000@gmail.com",
     phone: "+91 6301579122",
     location: "Hyderabad",
-    links: [{ label: "LinkedIn", url: "www.linkedin.com/in/kalyan-manda-90160822a" }, { label: "GitHub", url: "https://github.com/kalyanmandamp2000-lgtm"  }],
+    links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/kalyan-manda-90160822a" }, { label: "GitHub", url: "https://github.com/kalyanmandamp2000-lgtm"  }],
   },
   experience: [
     {
@@ -45,7 +45,7 @@ export const resume: ResumeData = {
   ],
   skills: [
     {
-      category: "Sitecore",
+      category: "Sitecore & CMS",
       items: [
         "SitecoreAI",
         "XM Cloud (XMC)",
@@ -58,27 +58,20 @@ export const resume: ResumeData = {
       ],
     },
     {
-      category: "Backend",
+      category: "Backend Development",
       items: ["C#", "ASP.NET MVC", "ASP.NET Core", "Node.js", "LINQ"],
     },
     {
-      category: "Tools & Methodologies",
-      items: [
-        "Azure Portal",
-        "CI/CD",
-        "Agile Development",
-        "Visual Studio",
-        "Visual Studio Code",
-        "Postman",
-      ],
-    },
-    {
-      category: "Frontend",
+      category: "Frontend Development",
       items: ["HTML5", "CSS3", "JavaScript", "jQuery", "React.js"],
     },
     {
       category: "Databases & APIs",
       items: ["MS SQL Server", "Cosmos DB", "Solr", "GraphQL", "REST APIs"],
+    },
+    {
+      category: "Tools & Practices",
+      items: ["Azure", "CI/CD", "Agile", "Visual Studio", "VS Code", "Postman"],
     },
   ],
   projects: [
@@ -145,7 +138,10 @@ export const resume: ResumeData = {
   ],
   certifications: [
     {
-      title: "SitecoreAI CMS Developer (Issued: May 2026)",
+      title: "SitecoreAI CMS Developer",
+      issuer: "Sitecore",
+      date: "May 2026",
+      credentialId: "4281c03f-5290-4405-bc56-f551fbf43c3c",
       url: "https://www.credly.com/badges/4281c03f-5290-4405-bc56-f551fbf43c3c/whatsapp",
     },
   ],

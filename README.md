@@ -33,6 +33,9 @@ A cinematic, 3D-inspired personal portfolio built with Next.js App Router, TypeS
 
 - Build: npm run build
 - Start: npm run start
+- The standalone output is generated in `.next/standalone` and can be deployed to any compatible Node.js runtime.
+
+For production deployment, configure the values in `.env.example` by copying them to `.env.local` and replacing the placeholder site URL and analytics token.
 
 ## Replace the resume PDF
 
@@ -93,13 +96,16 @@ The site respects prefers-reduced-motion and swaps animation-heavy transitions f
 
 To reduce or disable 3D effects further, keep the app on the 2D fallback path by avoiding heavy Three.js usage in the scene layer or by disabling the scene wrappers in the future.
 
-## Deployment to Vercel
+## Deployment to Vercel or another Next.js host
 
 1. Push the repository to GitHub.
-2. Import the project into Vercel.
-3. Add the environment variables from .env.example.
-4. Set the framework to Next.js.
-5. Deploy.
+2. Import the project into Vercel or your preferred Node.js host.
+3. Add the environment variables from `.env.example`.
+4. Set `NEXT_PUBLIC_SITE_URL` to the final public domain.
+5. Set `PORTFOLIO_ANALYTICS_TOKEN` to a random secret if you want the protected analytics dashboard enabled.
+6. Deploy using the production build (`npm run build`) or the host's Next.js preset.
+
+The application is configured with `output: "standalone"`, so the generated production artifact can also be copied and served with Node.js.
 
 ## Privacy notes
 
