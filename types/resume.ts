@@ -44,6 +44,9 @@ export interface EducationEntry {
 
 export interface CertificationEntry {
   title: string;
+  issuer?: string;
+  date?: string;
+  credentialId?: string;
   url?: string;
 }
 
