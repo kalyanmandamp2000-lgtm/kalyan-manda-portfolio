@@ -1,5 +1,5 @@
 import { NextResponse } from "next/server";
-import { readAnalyticsState, writeAnalyticsState } from "@/lib/analytics-store";
+import { readAnalyticsState, writeAnalyticsState, type AnalyticsEventName } from "@/lib/analytics-store";
 
 export async function POST(request: Request) {
   try {
@@ -12,18 +12,21 @@ export async function POST(request: Request) {
     };
 
     const state = await readAnalyticsState();
-    const event = String(body.event ?? "");
+    const event = body.event as AnalyticsEventName | undefined;
     const visitorId = String(body.visitorId ?? `anonymous-${Date.now()}`);
+
+    if (!event || !(event in state.events)) {
+      return NextResponse.json({ ok: false }, { status: 400 });
+    }
 
     if (!state.visitors.includes(visitorId)) {
       state.visitors.push(visitorId);
     }
 
-    state.events[event as keyof typeof state.events] =
-      (state.events[event as keyof typeof state.events] ?? 0) + 1;
+    state.events[event] = (state.events[event] ?? 0) + 1;
 
     state.history.push({
-      event: event as any,
+      event,
       source: body.source,
       section: body.section,
       project: body.project,

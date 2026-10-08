@@ -1,23 +1,18 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://example.com"),
+  metadataBase: new URL(siteUrl),
   title: "Kalyan Manda | Sitecore Developer",
   description:
     "Sitecore Certified AI CMS Developer specializing in Sitecore XP, XM, XM Cloud, SXA, Sitecore MVC, .NET, and enterprise CMS platform delivery.",
+  icons: {
+    icon: "/developer-icon.svg",
+  },
   openGraph: {
+    url: siteUrl,
     title: "Kalyan Manda | Sitecore Developer",
     description:
       "Portfolio and resume for a Sitecore Developer focused on digital experience platforms, CMS innovation, and enterprise web solutions.",
@@ -33,10 +28,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html
-      lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="en" className="h-full antialiased">
       <body className="min-h-full bg-slate-950 text-white">{children}</body>
     </html>
   );
