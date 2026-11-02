@@ -2,17 +2,19 @@
 
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { Braces, Code2, Database, Layers3, Server, Sparkles } from "lucide-react";
+import Image from "next/image";
 import { useMemo, useState } from "react";
 
+import { SectionBackground } from "@/components/portfolio/SectionBackground";
 import { resume } from "@/lib/resume";
 
 const categoryIcons = [Layers3, Braces, Code2, Database, Server];
 const categoryColors = [
-{ accent: "#f59e0b", glow: "rgba(245, 158, 11, .22)" },
-{ accent: "#a78bfa", glow: "rgba(167, 139, 250, .22)" },
-{ accent: "#facc15", glow: "rgba(250, 204, 21, .22)" },
-{ accent: "#34d399", glow: "rgba(52, 211, 153, .22)" },
-{ accent: "#38bdf8", glow: "rgba(56, 189, 248, .22)" },
+  { accent: "#67e8f9", glow: "rgba(103, 232, 249, .22)" },
+  { accent: "#a78bfa", glow: "rgba(167, 139, 250, .22)" },
+  { accent: "#c4b5fd", glow: "rgba(196, 181, 253, .22)" },
+  { accent: "#22d3ee", glow: "rgba(34, 211, 238, .22)" },
+  { accent: "#8b5cf6", glow: "rgba(139, 92, 246, .22)" },
 ];
 
 export function SkillsSection() {
@@ -32,6 +34,7 @@ export function SkillsSection() {
 
   return (
     <section id="skills" className="portfolio-section" aria-labelledby="skills-heading">
+      <SectionBackground src="/developer-icon.svg" />
       <div className="portfolio-shell flex min-h-full flex-col justify-center py-4 sm:py-6">
         <div className="mb-5 text-center sm:mb-7">
           <div className="section-kicker">Technical expertise</div>
@@ -44,7 +47,14 @@ export function SkillsSection() {
             <div className="skills-core-ring skills-core-ring-one" />
             <div className="skills-core-ring skills-core-ring-two" />
             <div className="skills-core-content">
-              <span className="skills-core-symbol">&lt;/&gt;</span>
+              <motion.span
+                className="skills-core-symbol"
+                animate={reduceMotion ? undefined : { rotateY: [-12, 12, -12], rotateX: [3, -3, 3], y: [0, -3, 0] }}
+                transition={{ duration: 5.5, ease: "easeInOut", repeat: Infinity }}
+                style={{ transformStyle: "preserve-3d" }}
+              >
+                <Image src="/developer-icon.svg" alt="" width={48} height={48} />
+              </motion.span>
               <span className="skills-core-title">
                 <strong>DEVELOPER</strong>
               </span>

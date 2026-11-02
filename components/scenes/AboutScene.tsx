@@ -3,13 +3,15 @@
 import { motion } from "framer-motion";
 import { Aperture, Layers3, Network } from "lucide-react";
 
+import { SectionBackground } from "@/components/portfolio/SectionBackground";
 import { resume } from "@/lib/resume";
 
 export function AboutScene() {
   return (
     <section id="about" className="portfolio-section" aria-labelledby="about-heading">
+      <SectionBackground src="/About-me.avif" />
       <div className="portfolio-shell">
-        <motion.div initial={{ opacity: 0, y: 24, filter: "blur(8px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ duration: 0.65 }} className="mx-auto max-w-4xl text-center">
+        <motion.div initial={{ opacity: 0, y: 24, filter: "blur(8px)" }} animate={{ opacity: 1, y: 0, filter: "blur(0px)" }} transition={{ duration: 0.65 }} className="relative z-10 mx-auto max-w-4xl text-center">
           <div className="section-kicker">About me</div>
           <h2 id="about-heading" className="section-heading">Engineering digital products with clarity, scale, and purpose.</h2>
           <div className="mx-auto my-5 h-px w-24 bg-gradient-to-r from-transparent via-sky-300 to-transparent" />

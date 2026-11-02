@@ -53,7 +53,7 @@ export function ContactModal({ open, onClose, phone }: ContactModalProps) {
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.94, y: 16 }}
             transition={{ type: "spring", stiffness: 300, damping: 26 }}
-            className="relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/15 bg-[#07111f]/95 p-5 shadow-[0_40px_120px_rgba(0,0,0,0.7),0_0_80px_rgba(14,165,233,0.12)] sm:p-8"
+            className="glass-panel relative w-full max-w-xl overflow-hidden rounded-[2rem] p-5 shadow-[0_40px_120px_rgba(0,0,0,0.7),0_0_80px_rgba(103,232,249,0.12)] sm:p-8"
           >
             <div className="pointer-events-none absolute -right-24 -top-24 h-64 w-64 rounded-full bg-sky-500/20 blur-3xl" />
             <div className="pointer-events-none absolute -bottom-24 -left-24 h-64 w-64 rounded-full bg-violet-500/15 blur-3xl" />
@@ -73,7 +73,7 @@ export function ContactModal({ open, onClose, phone }: ContactModalProps) {
               <div className="mt-8 grid gap-3 sm:grid-cols-2">
                 <a
                   href={phoneHref}
-                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-400 to-teal-300 px-5 py-3 text-sm font-bold text-slate-950 shadow-[0_18px_45px_rgba(52,211,153,0.18)] transition hover:-translate-y-0.5 hover:brightness-110"
+                  className="inline-flex min-h-14 items-center justify-center gap-2 rounded-2xl bg-gradient-to-r from-emerald-400 to-teal-300 px-5 py-3 text-sm font-bold text-slate-950 shadow-[0_18px_45px_rgba(103,232,249,0.18)] transition hover:-translate-y-0.5 hover:brightness-110"
                 >
                   <Phone className="h-4 w-4" /> Call
                 </a>
