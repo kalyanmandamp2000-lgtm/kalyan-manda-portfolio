@@ -9,7 +9,7 @@ export const resume: ResumeData = {
     email: "kalyanmandamp2000@gmail.com",
     phone: "+91 6301579122",
     location: "Hyderabad",
-    links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/kalyan-manda-90160822a" }, { label: "GitHub", url: "https://github.com/kalyanmandamp2000-lgtm"  }],
+    links: [{ label: "LinkedIn", url: "https://www.linkedin.com/in/kalyan-manda-90160822a" }, { label: "GitHub", url: "https://github.com/kalyanmandamp2000-lgtm"  }, { label: "Whats App", url: "https://wa.me/916301579122" }],
   },
   experience: [
     {
@@ -142,7 +142,14 @@ export const resume: ResumeData = {
       issuer: "Sitecore",
       date: "May 2026",
       credentialId: "4281c03f-5290-4405-bc56-f551fbf43c3c",
-      url: "https://www.credly.com/badges/4281c03f-5290-4405-bc56-f551fbf43c3c/whatsapp",
+      url: "https://www.credly.com/badges/4281c03f-5290-4405-bc56-f551fbf43c3c",
+    },
+    {
+      title: "SitecoreAI Agent Builder",
+      issuer: "Sitecore",
+      date: "October 2026",
+      credentialId: "ce2d0396-edfa-40ff-b2ee-9eb2d483278a",
+      url: "https://www.credly.com/badges/ce2d0396-edfa-40ff-b2ee-9eb2d483278a",
     },
   ],
 };

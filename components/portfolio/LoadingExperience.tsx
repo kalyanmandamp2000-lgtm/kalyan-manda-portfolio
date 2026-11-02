@@ -3,10 +3,19 @@
 import { AnimatePresence, motion, useReducedMotion } from "framer-motion";
 import { useEffect, useState } from "react";
 
+const messages = [
+  { at: 0, text: "INITIALIZING SYSTEM" },
+  { at: 25, text: "LOADING ASSETS" },
+  { at: 50, text: "BUILDING INTERFACE" },
+  { at: 75, text: "OPTIMIZING EXPERIENCE" },
+  { at: 100, text: "WELCOME ABOARD" },
+];
+
 export function LoadingExperience({ onComplete }: { onComplete: () => void }) {
   const reduceMotion = useReducedMotion();
   const [progress, setProgress] = useState(0);
   const [visible, setVisible] = useState(true);
+  const status = [...messages].reverse().find((message) => progress >= message.at)?.text ?? messages[0].text;
 
   useEffect(() => {
     const startedAt = performance.now();
@@ -34,23 +43,41 @@ export function LoadingExperience({ onComplete }: { onComplete: () => void }) {
   return (
     <AnimatePresence>
       {visible ? (
-        <motion.div className="fixed inset-0 z-[100] flex items-center justify-center overflow-hidden bg-[#050b13]" exit={{ opacity: 0, scale: 1.04 }} transition={{ duration: reduceMotion ? 0 : 0.65 }} aria-live="polite" aria-label="Loading portfolio experience">
-          <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(rgba(125,211,252,.08)_1px,transparent_1px),linear-gradient(90deg,rgba(125,211,252,.08)_1px,transparent_1px)] [background-size:44px_44px]" />
-          <div className="absolute left-1/2 top-1/2 h-72 w-72 -translate-x-1/2 -translate-y-1/2 rounded-full bg-sky-500/10 blur-[90px]" />
-          <motion.div animate={{ rotate: 360 }} transition={{ duration: 8, repeat: Infinity, ease: "linear" }} className="absolute h-56 w-56 rounded-full border border-sky-300/15 border-t-sky-300/80 border-r-cyan-300/30 shadow-[0_0_40px_rgba(56,189,248,0.18)]" />
+        <motion.div className="loader-overlay" exit={{ opacity: 0, scale: 1.025 }} transition={{ duration: reduceMotion ? 0 : 0.65 }} aria-live="polite" aria-label="Loading portfolio experience">
+          <div className="loader-grid" aria-hidden="true" />
 
-          <div className="relative z-10 flex flex-col items-center text-center">
-            <div className="mb-5 rounded-full border border-sky-400/20 bg-slate-950/55 px-4 py-2 font-mono text-5xl font-medium tracking-[-0.08em] text-white shadow-[0_0_30px_rgba(56,189,248,0.1)] sm:text-6xl">
-              {progress}
-              <span className="text-sky-300">%</span>
+          <div className="loader-content">
+            <div className="loader-scene" aria-hidden="true">
+              <div className="loader-orbit loader-orbit-one" />
+              <div className="loader-orbit loader-orbit-two" />
+              <div className="loader-cube">
+                <span className="loader-face loader-face-front" />
+                <span className="loader-face loader-face-back" />
+                <span className="loader-face loader-face-right" />
+                <span className="loader-face loader-face-left" />
+                <span className="loader-face loader-face-top" />
+                <span className="loader-face loader-face-bottom" />
+              </div>
             </div>
 
-            <div className="mb-4 h-px w-48 overflow-hidden bg-white/10">
-              <motion.div className="h-full bg-gradient-to-r from-sky-400 to-cyan-300" animate={{ width: `${progress}%` }} transition={{ duration: 0.15 }} />
-            </div>
+            <div className="loader-copy">
+              <p className="loader-eyebrow">PORTFOLIO.EXE</p>
+              <h1 className="loader-title">CRAFTING <span className="loader-title-accent">DIGITAL</span><br /><span className="loader-title-primary">EXPERIENCES</span><span className="loader-cursor">_</span></h1>
+              <p className="loader-subtitle">Building something meaningful, one pixel at a time.</p>
 
-            <div className="text-[10px] uppercase tracking-[0.38em] text-slate-400">Loading experience</div>
+              <div className="loader-progress-area">
+                <div className="loader-progress-info">
+                  <span className="loader-status">{status}</span>
+                  <span className="loader-percent">{String(progress).padStart(2, "0")}%</span>
+                </div>
+                <div className="loader-track" role="progressbar" aria-label="Portfolio loading progress" aria-valuemin={0} aria-valuemax={100} aria-valuenow={progress}>
+                  <motion.div className="loader-bar" animate={{ width: `${progress}%` }} transition={{ duration: 0.15 }} />
+                </div>
+              </div>
+            </div>
           </div>
+
+          <div className="loader-footer"><span>DESIGNED TO CREATE</span><span>V.01 / 2026</span></div>
         </motion.div>
       ) : null}
     </AnimatePresence>
