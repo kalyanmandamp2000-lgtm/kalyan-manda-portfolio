@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowUpRight, Mail } from "lucide-react";
 
+import { SectionBackground } from "@/components/portfolio/SectionBackground";
 import { resume } from "@/lib/resume";
 
 export function ContactSection() {
@@ -10,6 +11,7 @@ export function ContactSection() {
 
   return (
     <section id="contact" className="portfolio-section" aria-labelledby="contact-heading">
+      <SectionBackground src="/contact-me.avif" />
       <div className="portfolio-shell">
         <motion.div
           initial={{ opacity: 0, y: 24 }}
